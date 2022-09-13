@@ -20,7 +20,7 @@ jobs:
       with:
         go-version: 1.19
     - name: setup ko
-      uses: uses: imjasonh/setup-ko@v0.6
+      uses: imjasonh/setup-ko@v0.6
     - uses: sigstore/cosign-installer@main
     - name:
       run: ko publish --bare github.com/bobcallaway/hello-ko
