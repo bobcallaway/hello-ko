@@ -21,8 +21,9 @@ jobs:
         go-version: 1.19
     - name: setup ko
       uses: imjasonh/setup-ko@v0.6
-    - uses: sigstore/cosign-installer@main
-    - name:
+    - name: install cosign
+      uses: sigstore/cosign-installer@main
+    - name: Build binary and put into a container
       run: ko publish --bare github.com/bobcallaway/hello-ko
-    - name:
+    - name: Sign the container using GitHub Actions Workload Identity
       run: COSIGN_EXPERIMENTAL=1 cosign sign -a git_sha=$GITHUB_SHA ghcr.io/bobcallaway/hello-ko
