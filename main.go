@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Welcome to Dublin for OpenSSF EU 2022!!")
+	fmt.Println("Welcome to OpenSSF EU 2022!!")
 }
